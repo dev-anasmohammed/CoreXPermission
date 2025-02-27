@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="core_x_permission_default_dialog_bg">#fff</color>
+    <color name="core_x_permission_split_line">#e0e0e0</color>
+    <color name="core_x_permission_tint_color">#FF000000</color>
+    <color name="core_x_permission_text_color">#212121</color>
+    <color name="tint">#C73434</color>
+
+    <!-- Dialog Colors -->
+    <color name="cxp_default_dialog_background_color">#FFFFFF</color>
+    <color name="cxp_default_dialog_stroke_color">#000000</color>
+    <color name="cxp_default_dialog_icon_color">#000000</color>
+    <color name="cxp_default_dialog_icon_background_color">#E4E4E4</color>
+    <color name="cxp_default_dialog_title_color">#000000</color>
+    <color name="cxp_default_dialog_message_color">#000000</color>
+    <color name="cxp_default_dialog_positive_text_color">#FFFFFF</color>
+    <color name="cxp_default_dialog_positive_button_color">#000000</color>
+    <color name="cxp_default_dialog_negative_text_color">#000000</color>
+    <color name="cxp_default_dialog_negative_button_color">#E4E4E4</color>
+    <color name="cxp_default_dialog_item_text_color">#000000</color>
+    <color name="cxp_default_dialog_item_icon_color">#000000</color>
+</resources>

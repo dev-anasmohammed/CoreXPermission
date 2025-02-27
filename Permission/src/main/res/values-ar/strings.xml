@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CoreXPermission</string>
+    <string name="library_name">CoreXPermission</string>
+
+    <!--////////////// Notification //////////////-->
+
+    <!-- Notification Rationale -->
+    <string name="core_x_permission_notification_rationale">نحتاج إلى الوصول إلى الإشعارات لإبقائك محدثًا بأهم التنبيهات.</string>
+    <string name="core_x_permission_notification_rationale_positive_button">موافق</string>
+    <string name="core_x_permission_notification_rationale_negative_button">إلغاء</string>
+    <string name="core_x_permission_notification_settings">يرجى تمكين إذن الإشعارات في إعدادات جهازك.</string>
+    <string name="core_x_permission_notification_settings_positive_button">الذهاب إلى الإعدادات</string>
+    <string name="core_x_permission_notification_settings_negative_button">إلغاء</string>
+
+    <!--////////////// Location //////////////-->
+
+    <!-- Standard Location Permission -->
+    <string name="core_x_permission_location_standard_rationale">نحتاج إلى الوصول إلى موقعك للمتابعة.</string>
+    <string name="core_x_permission_location_standard_rationale_positive_button">موافق</string>
+    <string name="core_x_permission_location_standard_rationale_negative_button">إلغاء</string>
+    <string name="core_x_permission_location_standard_settings">يرجى تمكين إذن الموقع في إعدادات جهازك.</string>
+    <string name="core_x_permission_location_standard_settings_positive_button">الذهاب إلى الإعدادات</string>
+    <string name="core_x_permission_location_standard_settings_negative_button">إلغاء</string>
+
+    <!-- Low Accurate Tracking Permission -->
+    <string name="core_x_permission_location_low_accuracy_rationale">نحتاج إلى الوصول إلى موقعك للحصول على آخر تحديث لموقعك بشكل مستمر.</string>
+    <string name="core_x_permission_location_low_accuracy_rationale_positive_button">موافق</string>
+    <string name="core_x_permission_location_low_accuracy_rationale_negative_button">إلغاء</string>
+    <string name="core_x_permission_location_low_accuracy_settings">يرجى تمكين الأذونات المطلوبة في إعدادات جهازك.</string>
+    <string name="core_x_permission_location_low_accuracy_settings_positive_button">الذهاب إلى الإعدادات</string>
+    <string name="core_x_permission_location_low_accuracy_settings_negative_button">إلغاء</string>
+
+    <!-- High Accurate Tracking Permission -->
+    <string name="core_x_permission_location_high_accuracy_rationale">نحتاج إلى الوصول إلى موقعك للحصول على آخر تحديث لموقعك بشكل مستمر.</string>
+    <string name="core_x_permission_location_high_accuracy_rationale_positive_button">موافق</string>
+    <string name="core_x_permission_location_high_accuracy_rationale_negative_button">إلغاء</string>
+    <string name="core_x_permission_location_high_accuracy_settings">يرجى تمكين الأذونات المطلوبة في إعدادات جهازك.</string>
+    <string name="core_x_permission_location_high_accuracy_settings_positive_button">الذهاب إلى الإعدادات</string>
+    <string name="core_x_permission_location_high_accuracy_settings_negative_button">إلغاء</string>
+
+    <!--////////////// Default //////////////-->
+    <string name="cxp_default_title">الأذونات مطلوبة</string>
+    <string name="cxp_default_title_settings">تم رفض الأذونات</string>
+    <string name="cxp_default_message">يرجى تمكين الأذونات أدناه</string>
+    <string name="cxp_default_message_settings">يرجى تمكين الأذونات أدناه</string>
+    <string name="cxp_default_positive_button">السماح</string>
+    <string name="cxp_default_negative_button">إلغاء</string>
+
+    <!--////////////// Error //////////////-->
+    <string name="handler_builder_null">PermissionBuilder and permissionHandler should not be null at this time, so we can do nothing in this case.</string>
+    <string name="fine_coarse_not_granted">You have to request FineLocation and CoarseLocation Permissions first.</string>
+    <string name="body_sensor_not_granted">You have to request BodySensor Permissions first.</string>
+</resources>

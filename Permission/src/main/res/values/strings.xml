@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">CoreXPermission</string>
+    <string name="library_name">CoreXPermission</string>
+
+    <!--////////////// Notification //////////////-->
+
+    <string name="core_x_permission_notification_rationale">We needs access to notifications to keep you updated with important alerts.</string>
+    <string name="core_x_permission_notification_rationale_positive_button">Allow</string>
+    <string name="core_x_permission_notification_rationale_negative_button">Cancel</string>
+    <string name="core_x_permission_notification_settings">Please enable notifications permission in your device settings.</string>
+    <string name="core_x_permission_notification_settings_positive_button">Go to settings</string>
+    <string name="core_x_permission_notification_settings_negative_button">Cancel</string>
+
+    <!--////////////// Location //////////////-->
+
+    <!-- Standard Location  -->
+    <string name="core_x_permission_location_standard_rationale">We need access to your location to continue.</string>
+    <string name="core_x_permission_location_standard_rationale_positive_button">Allow</string>
+    <string name="core_x_permission_location_standard_rationale_negative_button">Cancel</string>
+    <string name="core_x_permission_location_standard_settings">Please enable location permission in your device settings.</string>
+    <string name="core_x_permission_location_standard_settings_positive_button">Go to settings</string>
+    <string name="core_x_permission_location_standard_settings_negative_button">Cancel</string>
+
+    <!-- Low Accurate Tracking  -->
+    <string name="core_x_permission_location_low_accuracy_rationale">We need access to your location to get last update of your location continuously.</string>
+    <string name="core_x_permission_location_low_accuracy_rationale_positive_button">Allow</string>
+    <string name="core_x_permission_location_low_accuracy_rationale_negative_button">Cancel</string>
+    <string name="core_x_permission_location_low_accuracy_settings">Please enable required permissions in your device settings.</string>
+    <string name="core_x_permission_location_low_accuracy_settings_positive_button">Go to settings</string>
+    <string name="core_x_permission_location_low_accuracy_settings_negative_button">Cancel</string>
+
+    <!-- High Accurate Tracking -->
+    <string name="core_x_permission_location_high_accuracy_rationale">We need access to your location to get last update of your location continuously.</string>
+    <string name="core_x_permission_location_high_accuracy_rationale_positive_button">Allow</string>
+    <string name="core_x_permission_location_high_accuracy_rationale_negative_button">Cancel</string>
+    <string name="core_x_permission_location_high_accuracy_settings">Please enable required permissions in your device settings.</string>
+    <string name="core_x_permission_location_high_accuracy_settings_positive_button">Go to settings</string>
+    <string name="core_x_permission_location_high_accuracy_settings_negative_button">Cancel</string>
+
+    <!--////////////// Default //////////////-->
+    <string name="cxp_default_title">Permissions Needed</string>
+    <string name="cxp_default_title_settings">Permissions Denied</string>
+    <string name="cxp_default_message">Please enable below permissions</string>
+    <string name="cxp_default_message_settings">Please go to settings to enable below permissions</string>
+    <string name="cxp_default_positive_button">OK</string>
+    <string name="cxp_default_negative_button">Cancel</string>
+
+    <!--////////////// Error //////////////-->
+    <string name="handler_builder_null">PermissionBuilder and permissionHandler should not be null at this time, so we can do nothing in this case.</string>
+    <string name="fine_coarse_not_granted">You have to request FineLocation and CoarseLocation Permissions first.</string>
+    <string name="body_sensor_not_granted">You have to request BodySensor Permissions first.</string>
+
+</resources>

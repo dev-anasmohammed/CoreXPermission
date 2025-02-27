@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardRoot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_024dp"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/dimen_014dp"
+        app:cardMaxElevation="@dimen/dimen_005dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeWidth="0dp"
+        tools:visibility="visible">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivIconBackground"
+                android:layout_width="@dimen/dimen_072dp"
+                android:layout_height="@dimen/dimen_072dp"
+                android:layout_marginTop="@dimen/dimen_024dp"
+                android:src="@drawable/ic_core_x_round"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivIcon"
+                android:layout_width="@dimen/dimen_032dp"
+                android:layout_height="@dimen/dimen_032dp"
+                android:layout_marginTop="@dimen/dimen_030dp"
+                android:src="@drawable/ic_core_x_notification"
+                app:layout_constraintBottom_toBottomOf="@+id/ivIconBackground"
+                app:layout_constraintEnd_toEndOf="@+id/ivIconBackground"
+                app:layout_constraintStart_toStartOf="@+id/ivIconBackground"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_024dp"
+                android:layout_marginTop="@dimen/dimen_024dp"
+                android:layout_marginBottom="@dimen/dimen_037dp"
+                android:gravity="center"
+                android:lineSpacingExtra="@dimen/dimen_004dp"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivIconBackground"
+                tools:text="@string/cxp_default_title" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/messageText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_024dp"
+                android:layout_marginTop="@dimen/dimen_008dp"
+                android:layout_marginBottom="@dimen/dimen_037dp"
+                android:lineSpacingExtra="@dimen/dimen_004dp"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+                tools:text="@string/cxp_default_message" />
+
+            <LinearLayout
+                android:id="@+id/permissionsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_024dp"
+                android:layout_marginTop="@dimen/dimen_024dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/messageText" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/positiveBtn"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dimen_056dp"
+                android:layout_marginTop="@dimen/dimen_024dp"
+                android:layout_marginEnd="@dimen/dimen_024dp"
+                android:layout_marginBottom="@dimen/dimen_024dp"
+                android:background="@drawable/bg_round_16"
+                android:backgroundTint="@color/black"
+                android:elevation="@dimen/dimen_000dp"
+                android:stateListAnimator="@null"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/permissionsLayout"
+                app:layout_constraintWidth_percent="0.6"
+                app:layout_goneMarginTop="@dimen/dimen_024dp"
+                tools:text="@string/cxp_default_positive_button" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/negativeBtn"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dimen_056dp"
+                android:layout_marginStart="@dimen/dimen_024dp"
+                android:layout_marginEnd="@dimen/dimen_008dp"
+                android:background="@drawable/bg_round_16"
+                android:backgroundTint="#E4E5E5"
+                android:elevation="@dimen/dimen_000dp"
+                android:stateListAnimator="@null"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/positiveBtn"
+                app:layout_constraintEnd_toStartOf="@+id/positiveBtn"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/positiveBtn"
+                app:layout_goneMarginTop="@dimen/dimen_024dp"
+                tools:text="@string/cxp_default_negative_button" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
