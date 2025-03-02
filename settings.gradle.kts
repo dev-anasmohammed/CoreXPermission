@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "CoreXPermission Master"
+rootProject.name = "CoreXPermission"
 include(":app")
 include(":Permission")
