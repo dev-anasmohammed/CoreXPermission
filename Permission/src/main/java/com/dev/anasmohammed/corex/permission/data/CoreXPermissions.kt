@@ -76,13 +76,15 @@ object CoreXPermissions {
         label = "Camera",
         value = "android.permission.CAMERA",
         type = PermissionType.Normal,
-        handler = NormalPermissionsHandler()
+        handler = NormalPermissionsHandler(),
+        group = CoreXPermissionGroups.Camera
     )
 
     val RecordingAudio = Permission(
         label = "Camera",
         value = "android.permission.RECORD_AUDIO",
         type = PermissionType.Normal,
-        handler = NormalPermissionsHandler()
+        handler = NormalPermissionsHandler(),
+        group = CoreXPermissionGroups.Audio
     )
 }

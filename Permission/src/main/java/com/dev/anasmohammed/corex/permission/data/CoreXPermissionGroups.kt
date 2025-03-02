@@ -11,10 +11,11 @@ import com.dev.anasmohammed.corex.permission.presentation.dialog.CoreXDefaultDia
  * both of them is for location permission
  */
 object CoreXPermissionGroups {
-    val UnSpecified = PermissionGroup("UnSpecified",android.R.drawable.stat_notify_error)
-    val Notification = PermissionGroup("Notification",R.drawable.ic_item_core_x_notification)
+    val UnSpecified = PermissionGroup("UnSpecified", android.R.drawable.stat_notify_error)
+    val Notification = PermissionGroup("Notification", R.drawable.ic_item_core_x_notification)
     val Location = PermissionGroup("Location", R.drawable.ic_item_core_x_location)
     val BackgroundLocation = PermissionGroup("BackgroundLocation", R.drawable.ic_item_core_x_location)
     val Battery = PermissionGroup("Battery", android.R.drawable.ic_lock_idle_low_battery)
-    val Media = PermissionGroup("Media")
+    val Camera = PermissionGroup("Camera", R.drawable.ic_core_x_camera)
+    val Audio = PermissionGroup("Audio", R.drawable.ic_core_x_record_audio)
 }

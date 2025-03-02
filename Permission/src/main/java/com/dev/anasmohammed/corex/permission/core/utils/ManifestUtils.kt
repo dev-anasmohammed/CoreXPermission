@@ -1,9 +1,12 @@
 package com.dev.anasmohammed.corex.permission.core.utils
 
+import android.content.Context
 import android.content.pm.PackageManager
+import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import com.dev.anasmohammed.corex.permission.core.models.Permission
+import com.dev.anasmohammed.corex.permission.data.CoreXPermissions
 
 /**
  * Checks if all the requested permissions are declared in the application's manifest.
@@ -18,6 +21,14 @@ fun isPermissionsDeclaredInManifest(
     fragment: Fragment?,
     requestedPermissions: List<Permission>,
 ) {
+    requestedPermissions.forEach {
+        Log.e("isPermissionsDeclaredInManifest", "${it.label}")
+        if (it == CoreXPermissions.Camera) {
+            Log.e("isPermissionsDeclaredInManifest", "CoreXPermissions.Camera")
+            checkFeatureInManifestOrThrow(activity, PackageManager.FEATURE_CAMERA)
+        }
+    }
+
     val declaredPermissions =
         getPermissionsInManifest(fragment?.requireActivity() ?: activity)
 
@@ -31,6 +42,36 @@ fun isPermissionsDeclaredInManifest(
             )
         }"
     )
+}
+
+fun isFeatureDeclaredInManifest(activity: FragmentActivity?, featureName: String): Boolean {
+    try {
+        val packageInfo = activity?.packageManager?.getPackageInfo(
+            activity.packageName!!,
+            PackageManager.GET_CONFIGURATIONS
+        )
+
+        val usesFeatures = packageInfo!!.reqFeatures ?: return false
+        for (feature in usesFeatures) {
+            if (feature.name == featureName) {
+                return true
+            }
+        }
+    } catch (e: PackageManager.NameNotFoundException) {
+        e.printStackTrace()
+    }
+    return false
+}
+
+fun checkFeatureInManifestOrThrow(activity: FragmentActivity?, featureName: String) {
+    if (!isFeatureDeclaredInManifest(activity, featureName)) {
+        throw Exception(
+            "\nThe hardware feature $featureName is not declared in the manifest!\n" +
+                    "<uses-feature\n" +
+                    "        android:name=\"$featureName\"\n" +
+                    "        android:required=\"false\" />"
+        )
+    }
 }
 
 /**

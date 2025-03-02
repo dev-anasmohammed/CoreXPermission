@@ -35,12 +35,21 @@ class PermissionMediator(
     internal val specialPermissions = LinkedHashSet<Permission>()
 
     /**
+     * Holds the special permissions that will be requested [PermissionType.Special]
+     */
+    internal var canCheckPermissionInManifest = true
+
+    /**
      * Set of permissions for specific feature.
      *
      * @param category A type from enum class [PermissionCategory].
      * @return PermissionBuilder itself.
      */
-    fun permissionCategory(category: PermissionCategory): PermissionBuilder {
+    fun permissionCategory(
+        category: PermissionCategory,
+        canCheckPermissionsInManifest: Boolean = true
+    ): PermissionBuilder {
+        canCheckPermissionInManifest = canCheckPermissionsInManifest
         permissionCategory = category
         return setRequestPermissions(category.permissions.toMutableList(), category)
     }
@@ -61,8 +70,12 @@ class PermissionMediator(
      * @param permissions A vararg param to pass permissions [CoreXPermissions].
      * @return PermissionBuilder itself.
      */
-    fun permissions(permissions: MutableList<Permission>): PermissionBuilder {
-        return setRequestPermissions(permissions)
+    fun permissions(
+        permissions: List<Permission>,
+        canCheckPermissionsInManifest: Boolean = true
+    ): PermissionBuilder {
+        canCheckPermissionInManifest = canCheckPermissionsInManifest
+        return setRequestPermissions(permissions.toMutableList())
     }
 
     /**
@@ -78,15 +91,14 @@ class PermissionMediator(
     ): PermissionBuilder {
 
         //remove ignore battery optimization if enabled set to false
-        if (permissionCategory != PermissionCategory.None
-            && permissionCategory is PermissionCategory.Location.HighAccurateTracking
-            && !permissionCategory.isBatteryOptimizeEnabled
-        ) {
+        if (permissionCategory is PermissionCategory.Location.HighAccurateTracking && !permissionCategory.isBatteryOptimizeEnabled) {
             permissions.removeIf { it.value == CoreXPermissions.RequestIgnoreBatteryOptimization.value }
         }
 
         //manifest check
-        isPermissionsDeclaredInManifest(activity, fragment, permissions)
+        if (canCheckPermissionInManifest) {
+            isPermissionsDeclaredInManifest(activity, fragment, permissions)
+        }
 
         logMe("PermissionMediator permissions\n")
         permissions.forEach {
@@ -119,6 +131,8 @@ class PermissionMediator(
             logMe("${it.value}\n")
         }
 
-        return PermissionBuilder(activity, fragment, normalPermissions, specialPermissions, this@PermissionMediator)
+        return PermissionBuilder(
+            activity, fragment, normalPermissions, specialPermissions, this@PermissionMediator
+        )
     }
 }
