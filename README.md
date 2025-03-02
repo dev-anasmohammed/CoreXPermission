@@ -1,5 +1,7 @@
 # CoreXPermission
 
+This library to handle permission on android. Started from Android 8.0 (API 26) to Android 15.0 (API 35)
+
   <img src="https://img.shields.io/badge/API-26%2B-brightgreen.svg?style=flat" height="22" valign="middle">&nbsp;&nbsp;
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg" height="22" valign="middle">&nbsp;&nbsp;
 
