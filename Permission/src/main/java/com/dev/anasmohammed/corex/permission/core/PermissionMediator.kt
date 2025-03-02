@@ -35,9 +35,9 @@ class PermissionMediator(
     internal val specialPermissions = LinkedHashSet<Permission>()
 
     /**
-     * Holds the special permissions that will be requested [PermissionType.Special]
+     * Holds if checking permissions and hardware feature are declared in manifest or not
      */
-    internal var canCheckPermissionInManifest = true
+    private var canCheckPermissionInManifest = true
 
     /**
      * Set of permissions for specific feature.
