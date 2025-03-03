@@ -181,3 +181,66 @@ Example of Exception
           android:name="android.hardware.camera"
           android:required="false" />
 ```
+
+## Customization Dialog
+
+| #  | Method                         | Usage                                                                                                            |
+|----|--------------------------------|------------------------------------------------------------------------------------------------------------------|
+| 01 | showExplainDialogBeforeRequest | If you want to show explain dialog before request permission or not                                              |
+| 02 | setDialogCancelable            | If you want to make dialog cancelable or not                                                                     |
+| 03 | setDialogNegativeAction        | Action when user click negative button after dialog is dismissed                                                 |
+| 04 | onExplainPermissionRequest     | if you want to do something else instead of showing explain permission dialog or edit default dialog attributes  |
+| 05 | onForwardToSettings            | if you want to do something else instead of showing forward to settings dialog or edit default dialog attributes |
+
+
+```kotlin
+        CoreXPermission.init(this)
+            .permissions(CoreXPermissions.Camera, CoreXPermissions.RecordingAudio)
+            .showExplainDialogBeforeRequest(true)
+            .setDialogCancelable(false)
+            .setDialogNegativeAction { }
+            .onExplainPermissionRequest { scope, deniedList ->
+                //edit default dialog attributes 
+                scope.showDefaultDialog(
+                    deniedList,
+                    DialogAttrs(titleTextColor = R.color.black)
+                )
+                
+                //or show custom dialog
+                
+                
+                //or do another thing instead of showing dialog 
+            }
+            .onForwardToSettings { scope, deniedList ->
+                //edit default dialog attributes 
+                scope.showDefaultDialog(
+                    deniedList,
+                    DialogAttrs(titleTextColor = R.color.black)
+                )
+                //or show custom dialog
+                
+
+                //or do another thing instead of showing dialog 
+            }
+            .request { allGranted, grantedList, deniedList ->
+                handleResult(allGranted, grantedList, deniedList)
+            }
+```
+
+Implement <b>BaseDialogFragment</b> then override required methods and do your custom implementation
+
+```kotlin
+    class CustomDialog : BaseDialogFragment() {
+        override fun getPositiveButton(): View {
+            TODO("Not yet implemented")
+        }
+    
+        override fun getNegativeButton(): View {
+            TODO("Not yet implemented")
+        }
+    
+        override fun getPermissionsToRequest(): List<Permission> {
+            TODO("Not yet implemented")
+        }
+}
+```

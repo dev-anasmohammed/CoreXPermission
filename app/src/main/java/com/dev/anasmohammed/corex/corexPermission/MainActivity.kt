@@ -2,8 +2,10 @@ package com.dev.anasmohammed.corex.corexPermission
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.dev.anasmohammed.corex.permission.abstraction.dialog.BaseDialogFragment
 import com.dev.anasmohammed.corex.permission.core.CoreXPermission
 import com.dev.anasmohammed.corex.permission.core.callback.PermissionRequestCallback
 import com.dev.anasmohammed.corex.permission.core.models.DialogAttrs
@@ -91,6 +93,8 @@ class MainActivity : AppCompatActivity(), PermissionRequestCallback {
                     deniedList,
                     DialogAttrs(titleTextColor = R.color.black)
                 )
+
+                scope.showDialogFragment()
             }
             .onForwardToSettings { scope, deniedList ->
                 scope.showDefaultDialog(
@@ -177,5 +181,20 @@ class MainActivity : AppCompatActivity(), PermissionRequestCallback {
                 Toast.makeText(this@MainActivity, "Denied", Toast.LENGTH_LONG).show()
             }
         }
+    }
+}
+
+
+class CustomDialog : BaseDialogFragment() {
+    override fun getPositiveButton(): View {
+        TODO("Not yet implemented")
+    }
+
+    override fun getNegativeButton(): View {
+        TODO("Not yet implemented")
+    }
+
+    override fun getPermissionsToRequest(): List<Permission> {
+        TODO("Not yet implemented")
     }
 }
