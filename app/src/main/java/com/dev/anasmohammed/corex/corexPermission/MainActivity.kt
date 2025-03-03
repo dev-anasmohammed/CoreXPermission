@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity(), PermissionRequestCallback {
                     DialogAttrs(titleTextColor = R.color.black)
                 )
 
-                scope.showDialogFragment()
+                scope.showDialogFragment(CustomDialog())
             }
             .onForwardToSettings { scope, deniedList ->
                 scope.showDefaultDialog(

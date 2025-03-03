@@ -207,7 +207,7 @@ Example of Exception
                 )
                 
                 //or show custom dialog
-                
+                scope.showDialogFragment(CustomDialog())
                 
                 //or do another thing instead of showing dialog 
             }
@@ -217,8 +217,9 @@ Example of Exception
                     deniedList,
                     DialogAttrs(titleTextColor = R.color.black)
                 )
-                //or show custom dialog
                 
+                //or show custom dialog
+                scope.showDialogFragment(CustomDialog())
 
                 //or do another thing instead of showing dialog 
             }
