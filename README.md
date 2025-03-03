@@ -60,10 +60,8 @@ updates.
 
 ## Predefined Permission Categories
 
-Category is a group of permissions under one topic used to streamline the process of requesting
-multiple permissions simultaneously.
-Also each one of these categories has their strings english and arabic changed according to the
-topic.
+Category is a group of permissions under one topic used to streamline the process of requesting multiple permissions simultaneously. 
+Each category has corresponding English and Arabic strings based on the topic.
 
 | #  | Category     | SubCategory          | Permissions                                                                                                                                    |
 |----|--------------|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
