@@ -24,7 +24,9 @@ implementation("io.github.dev-anasmohammed:CoreXPermission:1.0.1")
 1- [Supported Predefined Permissions](#predefined-permissions)<br/>
 2- [Supported Predefined Permission Categories](#predefined-permission-categories)<br/>
 3- [How to Request Permissions](#how-to-request-permission)<br/>
-4- [Handling Permission Request Results](#how-to-request-handle-result)<br/>
+4- [Handling Permission Request Results](#how-to-handle-result)<br/>
+5- [Manifest Checking](#how-to-handle-result)<br/>
+6- [Customization Dialog](#how-to-handle-result)<br/>
 
 ## Predefined Permissions
 
@@ -79,15 +81,46 @@ You can request permissions directly using [Predefined Permissions](#predefined-
 [By Using Permissions Category]
 ```kotlin
         CoreXPermission.init(this)
-            .permissionCategory(PermissionCategory.Location.LowAccurateTracking, false)
+            .permissionCategory(PermissionCategory.Location.LowAccurateTracking)
             .request { allGranted, grantedList, deniedList ->
                 //handle result of request here 
             }
 ```
 
+## How to handle result
 
-## How to request handle result
+You can handle result by using callbacks or interface 
 
+[By Using Callbacks]
 
+```kotlin
+        CoreXPermission.init(this)
+            .permissions(CoreXPermissions.Camera, CoreXPermissions.RecordingAudio)
+            .request { allGranted, grantedList, deniedList ->
+                //handle result of request here 
+            }
+```
 
+[By Using Interface]
 
+```kotlin
+        CoreXPermission.init(this)
+            .permissions(CoreXPermissions.Camera, CoreXPermissions.RecordingAudio)
+            .request(object : PermissionRequestCallback {
+                override fun onPermissionResult(
+                    allGranted: Boolean,
+                    grantedList: List<Permission>,
+                    deniedList: List<Permission>
+                ) {
+                    handleResult(allGranted, grantedList, deniedList)
+                }
+            })
+```
+
+Implement interface on your Activity/Fragment <b>PermissionRequestCallback</b>
+
+```kotlin
+        CoreXPermission.init(this)
+           .permissions(CoreXPermissions.Camera, CoreXPermissions.RecordingAudio)
+           .request(this)
+```
