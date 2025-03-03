@@ -20,13 +20,23 @@ implementation("io.github.dev-anasmohammed:CoreXPermission:1.0.1")
 ```
 
 ## Usage Of Library
-
+0- [Sample of usage](#sample-of-usage)
 1- [Supported Predefined Permissions](#predefined-permissions)<br/>
 2- [Supported Predefined Permission Categories](#predefined-permission-categories)<br/>
 3- [How to Request Permissions](#how-to-request-permission)<br/>
 4- [Handling Permission Request Results](#how-to-handle-result)<br/>
 5- [Manifest Checking](#how-to-handle-result)<br/>
 6- [Customization Dialog](#how-to-handle-result)<br/>
+
+## Sample of usage
+
+```kotlin
+        CoreXPermission.init(this)
+            .permissions(CoreXPermissions.Camera, CoreXPermissions.RecordingAudio)
+            .request { allGranted, grantedList, deniedList ->
+                //handle result of request here 
+            }
+```
 
 ## Predefined Permissions
 
@@ -89,7 +99,7 @@ You can request permissions directly using [Predefined Permissions](#predefined-
 
 ## How to handle result
 
-You can handle result by using callbacks or interface 
+You can handle result by using callback or interface 
 
 [By Using Callbacks]
 
@@ -112,7 +122,7 @@ You can handle result by using callbacks or interface
                     grantedList: List<Permission>,
                     deniedList: List<Permission>
                 ) {
-                    handleResult(allGranted, grantedList, deniedList)
+                    //handle result of request here 
                 }
             })
 ```
