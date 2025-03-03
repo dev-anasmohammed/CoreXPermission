@@ -42,12 +42,12 @@ implementation("io.github.dev-anasmohammed:CoreXPermission:1.0.1")
 
 ## Predefined Permission Categories
 
-| #  | Category     | SubCategory          | Permissions                                                                                                                                          |
-|----|--------------|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 01 | Notification | -                    |                                                                                                                                                      |
-| 02 | Location     | Standard             | FineLocation , CoarseLocation                                                                                                                        |
-|    |              | LowAccurateTracking  | FineLocation , CoarseLocation , Notification                                                                                                         |
-|    |              | HighAccurateTracking | FineLocation , CoarseLocation , Notification , BackgroundLocation<br/>ForegroundService ,ForegroundServiceLocation ,RequestIgnoreBatteryOptimization |
+| #  | Category     | SubCategory          | Permissions                                                                                                                                    |
+|----|--------------|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| 01 | Notification | -                    |                                                                                                                                                |
+| 02 | Location     | Standard             | FineLocation, CoarseLocation                                                                                                                   |
+|    |              | LowAccurateTracking  | FineLocation, CoarseLocation, Notification                                                                                                     |
+|    |              | HighAccurateTracking | FineLocation, CoarseLocation, Notification, BackgroundLocation, ForegroundService, ForegroundServiceLocation, RequestIgnoreBatteryOptimization |
 
 
 ## How to request permission
