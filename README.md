@@ -1,4 +1,4 @@
-# CoreXPermission
+# CoreXPermission [UnderDeveloping]
 
 This library to handle permission on android. Started from Android 8.0 (API 26) to Android 15.0 (API 35)
 
@@ -28,6 +28,8 @@ implementation("io.github.dev-anasmohammed:CoreXPermission:1.0.1")
 
 ## Predefined Permissions
 
+This the permissions that library support until now, We still working on it. 
+
 | #  | Permission                       | Value                                                   |
 |----|----------------------------------|---------------------------------------------------------|
 | 01 | Notification                     | android.permission.POST_NOTIFICATIONS                   |
@@ -41,6 +43,8 @@ implementation("io.github.dev-anasmohammed:CoreXPermission:1.0.1")
 | 09 | RecordingAudio                   | android.permission.RECORD_AUDIO                         |
 
 ## Predefined Permission Categories
+
+Category is a group of permission under one topic used to fasten the process of requesting permissions. 
 
 | #  | Category     | SubCategory          | Permissions                                                                                                                                    |
 |----|--------------|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
