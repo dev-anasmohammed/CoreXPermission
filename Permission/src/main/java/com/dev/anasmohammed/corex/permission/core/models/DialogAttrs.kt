@@ -30,12 +30,11 @@ import com.dev.anasmohammed.corex.permission.presentation.dialog.CoreXDefaultDia
  * @param negativeButtonColor Color resource for the negative button's background. (Default: `R.color.cxp_default_dialog_negative_button_color`)
  * @param itemTextColor Color resource for the text color of list items in the dialog. (Default: `R.color.cxp_default_dialog_item_text_color`)
  * @param itemIconColor Color resource for the icons of list items in the dialog. (Default: `R.color.cxp_default_dialog_item_icon_color`)
- * @param dialogRadius
- * @param dialogBackgroundColor
- * @param dialogButtonRadius
- * @param dialogStrokeColor
- * @param dialogStrokeWidth
- *
+ * @param dialogRadius Dimension resource for the corner radius of the dialog. (Default: `R.dimen.dimen_016dp`)
+ * @param dialogBackgroundColor Color resource for the dialog's background. (Default: `R.color.cxp_default_dialog_background_color`)
+ * @param dialogButtonRadius Dimension resource for the corner radius of the dialog buttons. (Default: `R.dimen.dimen_016dp`)
+ * @param dialogStrokeColor Color resource for the stroke/border of the dialog. (Default: `R.color.cxp_default_dialog_stroke_color`)
+ * @param dialogStrokeWidth Dimension resource for the width of the dialog's stroke/border. (Default: `R.dimen.dimen_000dp`)
  */
 data class DialogAttrs(
     var showIcon: Boolean = true,
@@ -56,7 +55,6 @@ data class DialogAttrs(
     @ColorRes var negativeButtonColor: Int = R.color.cxp_default_dialog_negative_button_color,
     @ColorRes var itemTextColor: Int = R.color.cxp_default_dialog_item_text_color,
     @ColorRes var itemIconColor: Int = R.color.cxp_default_dialog_item_icon_color,
-
     @DimenRes var dialogRadius : Int = R.dimen.dimen_016dp,
     @ColorRes var dialogBackgroundColor : Int = R.color.cxp_default_dialog_background_color,
     @DimenRes var dialogButtonRadius : Int = R.dimen.dimen_016dp,
