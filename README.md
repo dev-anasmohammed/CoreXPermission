@@ -34,11 +34,11 @@ implementation("io.github.dev-anasmohammed:CoreXPermission:1.0.1")
 ## Sample of usage
 
 ```kotlin
-        CoreXPermission.init(this)
-    .permissions(CoreXPermissions.Camera, CoreXPermissions.RecordingAudio)
-    .request { allGranted, grantedList, deniedList ->
-        //handle result of request here 
-    }
+    CoreXPermission.init(this)
+        .permissions(CoreXPermissions.Camera, CoreXPermissions.RecordingAudio)
+        .request { allGranted, grantedList, deniedList ->
+         //handle result of request here 
+        }
 ```
 
 ## Predefined Permissions
@@ -81,29 +81,29 @@ from  [Predefined Permission Categories](#predefined-permission-categories).
 [By Using Permissions Directly]
 
 ```kotlin
-        CoreXPermission.init(this)
-    .permissions(CoreXPermissions.Camera, CoreXPermissions.RecordingAudio)
-    .request { allGranted, grantedList, deniedList ->
-        //handle result of request here 
-    }
+     CoreXPermission.init(this)
+        .permissions(CoreXPermissions.Camera, CoreXPermissions.RecordingAudio)
+        .request { allGranted, grantedList, deniedList ->
+            //handle result of request here 
+        }
 ```
 
 ```kotlin
-        CoreXPermission.init(this)
-    .permissions(listOf(CoreXPermissions.Camera, CoreXPermissions.RecordingAudio))
-    .request { allGranted, grantedList, deniedList ->
-        //handle result of request here 
-    }
+     CoreXPermission.init(this)
+         .permissions(listOf(CoreXPermissions.Camera, CoreXPermissions.RecordingAudio))
+         .request { allGranted, grantedList, deniedList ->
+            //handle result of request here 
+         }
 ```
 
 [By Using Permissions Category]
 
 ```kotlin
-        CoreXPermission.init(this)
-    .permissionCategory(PermissionCategory.Location.LowAccurateTracking)
-    .request { allGranted, grantedList, deniedList ->
-        //handle result of request here 
-    }
+     CoreXPermission.init(this)
+        .permissionCategory(PermissionCategory.Location.LowAccurateTracking)
+        .request { allGranted, grantedList, deniedList ->
+            //handle result of request here 
+        }
 ```
 
 ## How to handle result
@@ -113,35 +113,35 @@ You can handle result by using callback or interface
 [By Using Callbacks]
 
 ```kotlin
-        CoreXPermission.init(this)
-    .permissions(CoreXPermissions.Camera, CoreXPermissions.RecordingAudio)
-    .request { allGranted, grantedList, deniedList ->
-        //handle result of request here 
-    }
+     CoreXPermission.init(this)
+         .permissions(CoreXPermissions.Camera, CoreXPermissions.RecordingAudio)
+         .request { allGranted, grantedList, deniedList ->
+             //handle result of request here 
+         }
 ```
 
 [By Using Interface]
 
 ```kotlin
-        CoreXPermission.init(this)
-    .permissions(CoreXPermissions.Camera, CoreXPermissions.RecordingAudio)
-    .request(object : PermissionRequestCallback {
-        override fun onPermissionResult(
-            allGranted: Boolean,
-            grantedList: List<Permission>,
-            deniedList: List<Permission>
-        ) {
+     CoreXPermission.init(this)
+         .permissions(CoreXPermissions.Camera, CoreXPermissions.RecordingAudio)
+         .request(object : PermissionRequestCallback {
+             override fun onPermissionResult(
+                 allGranted: Boolean,
+                 grantedList: List<Permission>,
+                 deniedList: List<Permission>
+         ) {
             //handle result of request here 
-        }
+         }
     })
 ```
 
 Implement interface on your Activity/Fragment <b>PermissionRequestCallback</b>
 
 ```kotlin
-        CoreXPermission.init(this)
-    .permissions(CoreXPermissions.Camera, CoreXPermissions.RecordingAudio)
-    .request(this)
+     CoreXPermission.init(this)
+         .permissions(CoreXPermissions.Camera, CoreXPermissions.RecordingAudio)
+         .request(this)
 ```
 
 ## Manifest Checking
@@ -155,33 +155,39 @@ Also for camera it throw exception if you don't declare the hardware feature.
 You can disable it if you want, by default its enabled.
 
 ```kotlin
-        CoreXPermission.init(this)
-    .permissions(listOf(CoreXPermissions.Camera, CoreXPermissions.RecordingAudio), false)
-    .request { allGranted, grantedList, deniedList ->
-        //handle result of request here 
-    }
+     CoreXPermission.init(this)
+       .permissions(listOf(CoreXPermissions.Camera, CoreXPermissions.RecordingAudio), false)
+       .request { allGranted, grantedList, deniedList ->
+           //handle result of request here 
+       }
 ```
 
 ```kotlin
-        CoreXPermission.init(this)
-    .permissionCategory(PermissionCategory.Location.LowAccurateTracking, false)
-    .request { allGranted, grantedList, deniedList ->
-        //handle result of request here 
-    }
+     CoreXPermission.init(this)
+         .permissionCategory(PermissionCategory.Location.LowAccurateTracking, false)
+         .request { allGranted, grantedList, deniedList ->
+              //handle result of request here 
+         }
 ```
 
 Example of Exception
 
 ```xml
-     FATAL EXCEPTION: mainProcess: com.dev.anasmohammed.corex.corexPermission, PID: 7487java.lang.RuntimeException: Unable to start activity ComponentInfo{com.dev.anasmohammed.corex.corexPermission/com.dev.anasmohammed.corex.corexPermission.MainActivity}: java.lang.Exception:Some Permissions not declared in manifest add them:
-<uses-permission android:name="android.permission.POST_NOTIFICATIONS" /><uses-permission
-android:name="android.permission.ACCESS_FINE_LOCATION" /><uses-permission
-android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    FATAL EXCEPTION: mainProcess: com.dev.anasmohammed.corex.corexPermission,
+    PID: 7487java.lang.RuntimeException: Unable to start activity ComponentInfo{com.dev.anasmohammed.corex.corexPermission/com.dev.anasmohammed.corex.corexPermission.MainActivity}: java.lang.Exception:
+    Some Permissions not declared in manifest add them:
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 ```
 
 ```xml
-     FATAL EXCEPTION: mainProcess: com.dev.anasmohammed.corex.corexPermission, PID: 7685java.lang.RuntimeException: Unable to start activity ComponentInfo{com.dev.anasmohammed.corex.corexPermission/com.dev.anasmohammed.corex.corexPermission.MainActivity}: java.lang.Exception:The hardware feature android.hardware.camera is not declared in the manifest!
-<uses-feature android:name="android.hardware.camera" android:required="false" />
+    FATAL EXCEPTION: mainProcess: com.dev.anasmohammed.corex.corexPermission,
+    PID: 7685java.lang.RuntimeException: Unable to start activity ComponentInfo{com.dev.anasmohammed.corex.corexPermission/com.dev.anasmohammed.corex.corexPermission.MainActivity}: java.lang.Exception:
+    The hardware feature android.hardware.camera is not declared in the manifest!
+    <uses-feature 
+         android:name="android.hardware.camera"
+         android:required="false" />
 ```
 
 ## Customization Dialog
@@ -195,56 +201,56 @@ android:name="android.permission.ACCESS_COARSE_LOCATION" />
 | 05 | onForwardToSettings            | if you want to do something else instead of showing forward to settings dialog or edit default dialog attributes |
 
 ```kotlin
-        CoreXPermission.init(this)
-    .permissions(CoreXPermissions.Camera, CoreXPermissions.RecordingAudio)
-    .showExplainDialogBeforeRequest(true)
-    .setDialogCancelable(false)
-    .setDialogNegativeAction { }
-    .onExplainPermissionRequest { scope, deniedList ->
-        //edit default dialog attributes 
-        scope.showDefaultDialog(
-            deniedList,
-            DialogAttrs(titleTextColor = R.color.black)
-        )
-
-        //or show custom dialog
-        scope.showDialogFragment(CustomDialog())
-
-        //or do another thing instead of showing dialog 
-    }
-    .onForwardToSettings { scope, deniedList ->
-        //edit default dialog attributes 
-        scope.showDefaultDialog(
-            deniedList,
-            DialogAttrs(titleTextColor = R.color.black)
-        )
-
-        //or show custom dialog
-        scope.showDialogFragment(CustomDialog())
-
-        //or do another thing instead of showing dialog 
-    }
-    .request { allGranted, grantedList, deniedList ->
-        handleResult(allGranted, grantedList, deniedList)
-    }
+     CoreXPermission.init(this)
+         .permissions(CoreXPermissions.Camera, CoreXPermissions.RecordingAudio)
+         .showExplainDialogBeforeRequest(true)
+         .setDialogCancelable(false)
+         .setDialogNegativeAction { }
+         .onExplainPermissionRequest { scope, deniedList ->
+             //edit default dialog attributes 
+             scope.showDefaultDialog(
+                 deniedList,
+                 DialogAttrs(titleTextColor = R.color.black)
+             )
+     
+             //or show custom dialog
+             scope.showDialogFragment(CustomDialog())
+     
+             //or do another thing instead of showing dialog 
+         }
+         .onForwardToSettings { scope, deniedList ->
+             //edit default dialog attributes 
+             scope.showDefaultDialog(
+                 deniedList,
+                 DialogAttrs(titleTextColor = R.color.black)
+             )
+     
+             //or show custom dialog
+             scope.showDialogFragment(CustomDialog())
+     
+             //or do another thing instead of showing dialog 
+         }
+         .request { allGranted, grantedList, deniedList ->
+             handleResult(allGranted, grantedList, deniedList)
+         }
 ```
 
 Implement <b>BaseDialogFragment</b> then override required methods and do your custom implementation
 
 ```kotlin
     class CustomDialog : BaseDialogFragment() {
-    override fun getPositiveButton(): View {
-        TODO("Not yet implemented")
+         override fun getPositiveButton(): View {
+             TODO("Not yet implemented")
+         }
+     
+         override fun getNegativeButton(): View {
+             TODO("Not yet implemented")
+         }
+     
+         override fun getPermissionsToRequest(): List<Permission> {
+             TODO("Not yet implemented")
+         }
     }
-
-    override fun getNegativeButton(): View {
-        TODO("Not yet implemented")
-    }
-
-    override fun getPermissionsToRequest(): List<Permission> {
-        TODO("Not yet implemented")
-    }
-}
 ```
 
 ## Default Dialog Attributes
