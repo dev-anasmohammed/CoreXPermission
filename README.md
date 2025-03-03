@@ -1,6 +1,6 @@
-# CoreXPermission [UnderDeveloping]
+# CoreXPermission [Under Development]
 
-This library to handle permission on android. Started from Android 8.0 (API 26) to Android 15.0 (API 35)
+CoreXPermission is a library designed to simplify permission handling in Android applications. It supports Android versions starting from 8.0 (API 26) to 15.0 (API 35).
 
 <img src="https://img.shields.io/badge/API-26%2B-brightgreen.svg?style=flat" height="22" valign="middle"> &nbsp;&nbsp;
 <img src="https://img.shields.io/badge/License-MIT-yellow.svg" height="22" valign="middle">&nbsp;&nbsp;
@@ -21,14 +21,14 @@ implementation("io.github.dev-anasmohammed:CoreXPermission:1.0.1")
 
 ## Usage Of Library
 
-1- [Predefined Permissions that library support](#predefined-permissions)<br/>
-2- [Predefined Permission Categories that library support](#predefined-permission-categories)<br/>
-3- [How to set permissions you want to request](#how-to-request-permission)<br/>
-4- [How to handle the result of the permission request](#how-to-request-handle-result)<br/>
+1- [Supported Predefined Permissions](#predefined-permissions)<br/>
+2- [Supported Predefined Permission Categories](#predefined-permission-categories)<br/>
+3- [How to Request Permissions](#how-to-request-permission)<br/>
+4- [Handling Permission Request Results](#how-to-request-handle-result)<br/>
 
 ## Predefined Permissions
 
-This the permissions that library support until now, We still working on it. 
+The library currently supports the following permissions. More permissions will be added in future updates.
 
 | #  | Permission                       | Value                                                   |
 |----|----------------------------------|---------------------------------------------------------|
@@ -44,7 +44,7 @@ This the permissions that library support until now, We still working on it.
 
 ## Predefined Permission Categories
 
-Category is a group of permission under one topic used to fasten the process of requesting permissions. 
+Category is a group of permissions under one topic used to streamline the process of requesting multiple permissions simultaneously.. 
 
 | #  | Category     | SubCategory          | Permissions                                                                                                                                    |
 |----|--------------|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -56,8 +56,7 @@ Category is a group of permission under one topic used to fasten the process of 
 
 ## How to request permission
 
-You can set the permissions you want [Predefined Permissions](#predefined-permissions) or set
-permission category [Predefined Permission Categories](#predefined-permission-categories).
+You can request permissions directly using [Predefined Permissions](#predefined-permissions) or by selecting a permission category from  [Predefined Permission Categories](#predefined-permission-categories).
 
 ## How to request handle result
 
