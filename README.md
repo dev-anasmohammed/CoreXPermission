@@ -21,7 +21,7 @@ implementation("io.github.dev-anasmohammed:CoreXPermission:1.0.1")
 
 ## Contents
 
-0- [Sample of usage](#sample-of-usage)
+0- [Sample of usage](#sample-of-usage)<br/>
 1- [Supported Predefined Permissions](#predefined-permissions)<br/>
 2- [Supported Predefined Permission Categories](#predefined-permission-categories)<br/>
 3- [How to Request Permissions](#how-to-request-permission)<br/>
@@ -57,7 +57,8 @@ The library currently supports the following permissions. More permissions will 
 
 ## Predefined Permission Categories
 
-Category is a group of permissions under one topic used to streamline the process of requesting multiple permissions simultaneously.. 
+Category is a group of permissions under one topic used to streamline the process of requesting multiple permissions simultaneously.
+Also each one of these categories has their strings english and arabic changed according to the topic.
 
 | #  | Category     | SubCategory          | Permissions                                                                                                                                    |
 |----|--------------|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -134,4 +135,28 @@ Implement interface on your Activity/Fragment <b>PermissionRequestCallback</b>
         CoreXPermission.init(this)
            .permissions(CoreXPermissions.Camera, CoreXPermissions.RecordingAudio)
            .request(this)
+```
+
+## Manifest Checking 
+
+This feature checks if developer declare the requested permission and hardware feature in manifest or not. 
+Library checks if you don't declare permissions in the manifest it throw exception and give you the required tags to put it in manifest.
+Also for camera it throw exception if you don't declare the hardware feature.
+
+You can disable it if you want, by default its enabled.
+
+```kotlin
+        CoreXPermission.init(this)
+            .permissions(listOf(CoreXPermissions.Camera, CoreXPermissions.RecordingAudio) , false)
+            .request { allGranted, grantedList, deniedList ->
+                //handle result of request here 
+            }
+```
+
+```kotlin
+        CoreXPermission.init(this)
+            .permissionCategory(PermissionCategory.Location.LowAccurateTracking , false)
+            .request { allGranted, grantedList, deniedList ->
+                //handle result of request here 
+            }
 ```
