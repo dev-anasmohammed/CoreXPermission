@@ -58,6 +58,34 @@ Category is a group of permissions under one topic used to streamline the proces
 
 You can request permissions directly using [Predefined Permissions](#predefined-permissions) or by selecting a permission category from  [Predefined Permission Categories](#predefined-permission-categories).
 
+[By Using Permissions Directly]
+
+```kotlin
+        CoreXPermission.init(this)
+            .permissions(CoreXPermissions.Camera, CoreXPermissions.RecordingAudio)
+            .request { allGranted, grantedList, deniedList ->
+                //handle result of request here 
+            }
+```
+
+```kotlin
+        CoreXPermission.init(this)
+            .permissions(listOf(CoreXPermissions.Camera, CoreXPermissions.RecordingAudio))
+            .request { allGranted, grantedList, deniedList ->
+                //handle result of request here 
+            }
+```
+
+[By Using Permissions Category]
+```kotlin
+        CoreXPermission.init(this)
+            .permissionCategory(PermissionCategory.Location.LowAccurateTracking, false)
+            .request { allGranted, grantedList, deniedList ->
+                //handle result of request here 
+            }
+```
+
+
 ## How to request handle result
 
 
