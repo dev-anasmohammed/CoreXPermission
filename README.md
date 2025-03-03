@@ -160,3 +160,24 @@ You can disable it if you want, by default its enabled.
                 //handle result of request here 
             }
 ```
+
+Example of Exception
+
+```xml
+     FATAL EXCEPTION: main
+     Process: com.dev.anasmohammed.corex.corexPermission, PID: 7487
+     java.lang.RuntimeException: Unable to start activity ComponentInfo{com.dev.anasmohammed.corex.corexPermission/com.dev.anasmohammed.corex.corexPermission.MainActivity}: java.lang.Exception: 
+     Some Permissions not declared in manifest add them:
+     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+```
+```xml
+     FATAL EXCEPTION: main
+     Process: com.dev.anasmohammed.corex.corexPermission, PID: 7685
+     java.lang.RuntimeException: Unable to start activity ComponentInfo{com.dev.anasmohammed.corex.corexPermission/com.dev.anasmohammed.corex.corexPermission.MainActivity}: java.lang.Exception: 
+     The hardware feature android.hardware.camera is not declared in the manifest!
+     <uses-feature
+          android:name="android.hardware.camera"
+          android:required="false" />
+```

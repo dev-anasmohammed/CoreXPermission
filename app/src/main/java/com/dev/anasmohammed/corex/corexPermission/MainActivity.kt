@@ -17,8 +17,8 @@ class MainActivity : AppCompatActivity(), PermissionRequestCallback {
         setContentView(R.layout.activity_main)
 
         //request
-        requestPermissionRequestCase1()
-        //requestPermissionRequestCase2()
+//        requestPermissionRequestCase1()
+        requestPermissionRequestCase2()
         //requestPermissionRequestCase3()
         //requestPermissionRequestCase4()
 
@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity(), PermissionRequestCallback {
      */
     private fun requestPermissionRequestCase1() {
         CoreXPermission.init(this)
-            .permissionCategory(PermissionCategory.Location.LowAccurateTracking, false)
+            .permissionCategory(PermissionCategory.Location.LowAccurateTracking, true)
             .request { allGranted, grantedList, deniedList ->
                 handleResult(allGranted, grantedList, deniedList)
             }
