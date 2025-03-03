@@ -19,7 +19,8 @@ repositories {
 implementation("io.github.dev-anasmohammed:CoreXPermission:1.0.1")
 ```
 
-## Usage Of Library
+## Contents
+
 0- [Sample of usage](#sample-of-usage)
 1- [Supported Predefined Permissions](#predefined-permissions)<br/>
 2- [Supported Predefined Permission Categories](#predefined-permission-categories)<br/>
